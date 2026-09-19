@@ -40,5 +40,6 @@ public class Homework5 {
         else {
             System.out.println("not attending");
         }
+        System.out.println(choice);
     }
 }
