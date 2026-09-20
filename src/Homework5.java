@@ -24,21 +24,19 @@ public class Homework5 {
         String choice = null;
         if (selection == 1) {
             choice = "beef";
-        }
-        else if (selection == 2) {
+        } else if (selection == 2) {
             choice = "chicken";
-        }
-        else if (selection == 3) {
+        } else if (selection == 3) {
             choice = "pasta";
-        }
-        else {
+        } else {
             choice = "fish";
         }
         if (rsvp) {
             System.out.println("attending");
-        }
-        else {
+            option1 = "Thanks for attending. You will be served " + choice + ".";
+        } else {
             System.out.println("not attending");
+            option1 = "Sorry you can't make it";
         }
         System.out.println(choice);
     }
