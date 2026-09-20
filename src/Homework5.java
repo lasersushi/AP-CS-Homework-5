@@ -45,4 +45,18 @@ public class Homework5 {
             System.out.println("false");
         }
     }
+
+    public static void drawSquare(int x, int y, int len) {
+        int pointOne = x + len;
+        drawLine(x, y, pointOne, y);
+        int pointTwo = y - len;
+        drawLine(pointOne, y, pointOne, pointTwo);
+        int pointThree = x - len;
+        drawLine(pointOne, pointTwo, pointThree, pointTwo);
+        int pointFour = y + len;
+        drawLine(pointThree, pointTwo, pointThree, pointFour);
+        int area = len * 2;
+        String lenAndArea = "side length = " + len + ", area = " + area;
+        System.out.println(lenAndArea);
+    }
 }
