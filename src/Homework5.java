@@ -7,7 +7,23 @@ AT CS - C
 
 public class Homework5 {
     public static void main(String[] args) {
-
+        String type = args[0];
+        String argOne = args[1];
+        String argTwo = args[2];
+        String argThree = args[3];
+        String argFour = args[4];
+        if (type.equals("respondToRSVP")) {
+            boolean rsvp = Boolean.parseBoolean(argOne);
+            int selection = Integer.parseInt(argTwo);
+            respondToRSVP(rsvp, selection, argThree, argFour);
+        } else if (type.equals("drawSquare")) {
+            int x = Integer.parseInt(argOne);
+            int y = Integer.parseInt(argTwo);
+            int len = Integer.parseInt(argThree);
+        } else {
+            throw new IllegalArgumentException("Illegal input for argument number 1, type");
+        }
+        }
     }
 
     public static void drawLine(int x1, int y1, int x2, int y2) {
@@ -74,11 +90,8 @@ public class Homework5 {
             pointFour = pointTwo + len;
         }
         drawLine(x, y, pointOne, y);
-        int pointTwo = y - len;
         drawLine(pointOne, y, pointOne, pointTwo);
-        int pointThree = x - len;
         drawLine(pointOne, pointTwo, pointThree, pointTwo);
-        int pointFour = y + len;
         drawLine(pointThree, pointTwo, pointThree, pointFour);
         double area = Math.pow(len, 2);
         int areaInt = (int)(area);
