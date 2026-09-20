@@ -39,5 +39,10 @@ public class Homework5 {
             option1 = "Sorry you can't make it";
         }
         System.out.println(choice);
+        if (option1.equals(option2)) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
     }
 }
