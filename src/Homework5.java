@@ -48,6 +48,31 @@ public class Homework5 {
 
     public static void drawSquare(int x, int y, int len) {
         int pointOne = x + len;
+        while (pointOne < 0 || pointOne > 10) {
+            len = len - 1;
+            pointOne = x + len;
+        }
+        int pointTwo = y - len;
+        while (pointTwo < 0 || pointTwo > 10) {
+            len = len - 1;
+            pointOne = x + len;
+            pointTwo = y - len;
+        }
+        int pointThree = pointOne - len;
+        while (pointThree < 0 || pointThree > 10) {
+            len = len - 1;
+            pointOne = x + len;
+            pointTwo = y - len;
+            pointThree = pointOne - len;
+        }
+        int pointFour = pointTwo + len;
+        while (pointFour < 0 || pointFour > 10) {
+            len = len - 1;
+            pointOne = x + len;
+            pointTwo = y - len;
+            pointThree = pointOne - len;
+            pointFour = pointTwo + len;
+        }
         drawLine(x, y, pointOne, y);
         int pointTwo = y - len;
         drawLine(pointOne, y, pointOne, pointTwo);
@@ -55,8 +80,9 @@ public class Homework5 {
         drawLine(pointOne, pointTwo, pointThree, pointTwo);
         int pointFour = y + len;
         drawLine(pointThree, pointTwo, pointThree, pointFour);
-        int area = len * 2;
-        String lenAndArea = "side length = " + len + ", area = " + area;
+        double area = Math.pow(len, 2);
+        int areaInt = (int)(area);
+        String lenAndArea = "side length = " + len + ", area = " + areaInt;
         System.out.println(lenAndArea);
     }
 }
