@@ -12,7 +12,8 @@ public class Homework5 {
         String argTwo = args[2];
         String argThree = args[3];
         if (type.equals("respondToRSVP")) {
-            String argFour = args[4];
+            String argFour = args[4]; // If it is RSVP type, then must also parse an 4th argument. This is only done
+                                      // for respondToRSVP because drawSquare only takings in 3 arguemnts.
             boolean rsvp = Boolean.parseBoolean(argOne);
             int selection = Integer.parseInt(argTwo);
             respondToRSVP(rsvp, selection, argThree, argFour);
@@ -34,6 +35,7 @@ public class Homework5 {
             // Draws line in hidden grid, print confirmation message to the user
             System.out.println("Drew a line from (" + x1 + ", " + y1 + ") to (" + x2 + ", " + y2 + ")");
         }
+        // This is Mr. Menezes starter code
     }
 
     public static void respondToRSVP(boolean rsvp, int selection, String option1, String option2) {
@@ -56,7 +58,8 @@ public class Homework5 {
         }
         System.out.println(choice);
         if (option1.equals(option2)) {
-            System.out.println("true");
+            System.out.println("true"); // Basically if the string option1 is equal to the string option2 then print
+                                        // true. Note that the value of option one can change
         } else {
             System.out.println("false");
         }
@@ -89,10 +92,12 @@ public class Homework5 {
             pointThree = pointOne - len;
             pointFour = pointTwo + len;
         }
+        // The above well loops check if the square is to large. If so, it creates a
+        // smaller value of len
         drawLine(x, y, pointOne, y);
         drawLine(pointOne, y, pointOne, pointTwo);
         drawLine(pointOne, pointTwo, pointThree, pointTwo);
-        drawLine(pointThree, pointTwo, pointThree, pointFour);
+        drawLine(pointThree, pointTwo, pointThree, pointFour); // Calls the draw line method to create the square
         double area = Math.pow(len, 2);
         int areaInt = (int) (area);
         String lenAndArea = "side length = " + len + ", area = " + areaInt;
