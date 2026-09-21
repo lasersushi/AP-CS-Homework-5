@@ -11,8 +11,8 @@ public class Homework5 {
         String argOne = args[1];
         String argTwo = args[2];
         String argThree = args[3];
-        String argFour = args[4];
         if (type.equals("respondToRSVP")) {
+            String argFour = args[4];
             boolean rsvp = Boolean.parseBoolean(argOne);
             int selection = Integer.parseInt(argTwo);
             respondToRSVP(rsvp, selection, argThree, argFour);
@@ -52,7 +52,7 @@ public class Homework5 {
             option1 = "Thanks for attending. You will be served " + choice + ".";
         } else {
             System.out.println("not attending");
-            option1 = "Sorry you can't make it";
+            option1 = "Sorry you can't make it.";
         }
         System.out.println(choice);
         if (option1.equals(option2)) {
