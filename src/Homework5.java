@@ -20,9 +20,9 @@ public class Homework5 {
             int x = Integer.parseInt(argOne);
             int y = Integer.parseInt(argTwo);
             int len = Integer.parseInt(argThree);
+            drawSquare(x, y, len);
         } else {
             throw new IllegalArgumentException("Illegal input for argument number 1, type");
-        }
         }
     }
 
@@ -94,7 +94,7 @@ public class Homework5 {
         drawLine(pointOne, pointTwo, pointThree, pointTwo);
         drawLine(pointThree, pointTwo, pointThree, pointFour);
         double area = Math.pow(len, 2);
-        int areaInt = (int)(area);
+        int areaInt = (int) (area);
         String lenAndArea = "side length = " + len + ", area = " + areaInt;
         System.out.println(lenAndArea);
     }
